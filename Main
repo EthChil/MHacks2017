@@ -1,6 +1,6 @@
 
 import java.util.Scanner;
-import
+import BufferedReader;
 
 class Main{
   public static void main(String[] args){
