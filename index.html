@@ -1,166 +1,52 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>Alpha by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-	</head>
-	<body class="landing">
-		<div id="page-wrapper">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
 
-			<!-- Header -->
-				<header id="header" class="alt">
-					<h1><a href="index.html">Snail Mail Speedup</a> - a design based on Alpha by HTML5 UP</h1>
-					<nav id="nav">
-						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li>
-								<a href="#" class="icon fa-angle-down">Layouts</a>
-								<ul>
-									<li><a href="generic.html">Generic</a></li>
-									<li><a href="contact.html">Contact</a></li>
-									<li><a href="elements.html">Elements</a></li>
-									<li>
-										<a href="#">Submenu</a>
-										<ul>
-											<li><a href="#">Option One</a></li>
-											<li><a href="#">Option Two</a></li>
-											<li><a href="#">Option Three</a></li>
-											<li><a href="#">Option Four</a></li>
-										</ul>
-									</li>
-								</ul>
-							</li>
-							<li><a href="#" class="button">Sign Up</a></li>
-						</ul>
-					</nav>
-				</header>
+    <script defer src="https://d1xa36cy0xt122.cloudfront.net/v1/Mixmax.js"></script>
 
-			<!-- Banner -->
-				<section id="banner">
-					<h2>Snail Mail Speedup</h2>
-					<p>The SMS Revolution to Reading Emails</p>
-					<ul class="actions">
-						<li><a href="#" class="button special">Sign Up</a></li>
-						<li><a href="#" class="button">Learn More</a></li>
-					</ul>
-				</section>
+    hi
 
-			<!-- Main -->
-				<section id="main" class="container">
 
-					<section class="box special">
-						<header class="major">
-							<h2>Need to view emails in a hurry but don't have data?
-							<br />
-							Introducing the ultimate email viewing service</h2>
-							<p>for viewing/listening to your emails through SMS.<br />
-							Sign Up today to begin the experience.</p>
-						</header>
-						<span class="image featured"><img src="images/launching banner.jpeg" alt="" /></span>
-					</section>
 
-					<section class="box special features">
-						<div class="features-row">
-							<section>
-								<span class="icon major fa-bolt accent2"></span>
-								<h3>Magna etiam</h3>
-								<p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
-							</section>
-							<section>
-								<span class="icon major fa-area-chart accent3"></span>
-								<h3>Ipsum dolor</h3>
-								<p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
-							</section>
-						</div>
-						<div class="features-row">
-							<section>
-								<span class="icon major fa-cloud accent4"></span>
-								<h3>Sed feugiat</h3>
-								<p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
-							</section>
-							<section>
-								<span class="icon major fa-lock accent5"></span>
-								<h3>Enim phasellus</h3>
-								<p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
-							</section>
-						</div>
-					</section>
+    <script type="text/javascript">
 
-					<div class="row">
-						<div class="6u 12u(narrower)">
 
-							<section class="box special">
-								<span class="image featured"><img src="images/pic02.jpg" alt="" /></span>
-								<h3>Sed lorem adipiscing</h3>
-								<p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
-								<ul class="actions">
-									<li><a href="#" class="button alt">Learn More</a></li>
-								</ul>
-							</section>
+    var myInit = { method: 'GET',
+        headers: {'X-API-Token': '4042e194-a0f9-4186-b826-a38f24da2817'}};
 
-						</div>
-						<div class="6u 12u(narrower)">
+    fetch('https://api.mixmax.com/v1/messages', myInit).then(function(response) {
+        //console.log(response.json());
+        return response.json();
+    }).then(function(myBlob) {
+        //document.write(myBlob);
+        document.write(myBlob.results[2].body);
 
-							<section class="box special">
-								<span class="image featured"><img src="images/pic03.jpg" alt="" /></span>
-								<h3>Accumsan integer</h3>
-								<p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
-								<ul class="actions">
-									<li><a href="#" class="button alt">Learn More</a></li>
-								</ul>
-							</section>
+    });
 
-						</div>
-					</div>
 
-				</section>
+    var accountSid = 'ACc77a5e1a69d3f8999521f1dbe926fd9';
+    var authToken = "30e47ba6be1c2f614b869cdaadd39239";
+    var client = (accountSid, authToken);
 
-			<!-- CTA -->
-				<section id="cta">
+    client.messages.create({
+        body: "Jenny please?! I love you <3",
+        to: "+15558675309",
+        from: "+14158141829",
+        mediaUrl: "http://www.example.com/hearts.png"
+    }, function(err, message) {
+        process.stdout.write(message.sid);
+    });
 
-					<h2>Sign up for beta access</h2>
-					<p>Blandit varius ut praesent nascetur eu penatibus nisi risus faucibus nunc.</p>
 
-					<form>
-						<div class="row uniform 50%">
-							<div class="8u 12u(mobilep)">
-								<input type="email" name="email" id="email" placeholder="Email Address" />
-							</div>
-							<div class="4u 12u(mobilep)">
-								<input type="submit" value="Sign Up" class="fit" />
-							</div>
-						</div>
-					</form>
 
-				</section>
 
-			<!-- Footer -->
-				<footer id="footer">
-					<ul class="icons">
-						<li><a href="https://twitter.com/hongyichen_" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="https://www.facebook.com/hongyichen0" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-						<li><a href="https://www.instagram.com/hongswizzle/" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-						<li><a href="https://github.com/hongyi-chen" class="icon fa-github"><span class="label">Github</span></a></li>
-					</ul>
-					<ul class="copyright">
-						<li>&copy; Hong Yi Chen & Bill Liu. All rights reserved.</li>
-					</ul>
-				</footer>
 
-		</div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/jquery.scrollgress.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
+    </script>
 
-	</body>
+</body>
 </html>
