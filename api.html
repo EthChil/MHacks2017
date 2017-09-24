@@ -13,12 +13,16 @@
 
     <script defer src="https://d1xa36cy0xt122.cloudfront.net/v1/Mixmax.js"></script>
 
-    <h2>Split the phone numbers with a comma and don't include the area code: </h2>
+    <h2>Split the phone numbers with a comma and don't include the country extension code (the +1): </h2>
     <input type="text" id="phone" />
     <ul>
     <li><button onclick="submit();" href="javascript:;" class="button alt">Submit</button></li>
     <li><a href="index.html" class="button alt">Take me back</a></li>
   </ul>
+
+  <div class="popup" onclick="myFunction()">Click me!
+  <span class="popuptext" id="myPopup">Popup text...</span>
+</div>
 
     <script type="text/javascript">
 
@@ -123,7 +127,8 @@
 
 
             getEmail(space, comma);
-
+            var popup = document.getElementById("myPopup");
+            popup.classList.toggle("show");
 
 
 
