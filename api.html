@@ -23,29 +23,23 @@
     fetch('https://api.mixmax.com/v1/messages', myInit).then(function(response) {
         return response.json();
     }).then(function(myBlob) {
-        var largest = 0;
-        var largestIndex = 0;
 
-        for(var i = 0; i < myBlob.results.length; i++)
-        {
-            var html = myBlob.results[i].updatedAt;
-            var div = document.createElement("div");
-            div.innerHTML = html;
-            var text = div.textContent || div.innerText || "";
+        var html = myBlob.results[1].body;
+        var div = document.createElement("div");
+        div.innerHTML = html;
+        var text = div.textContent || div.innerText || "";
 
-            if(text > largest)
-            {
-                largest = text;
-                largestIndex = i;
-            }
-        }
+        html = myBlob.results[1].subject;
+        div = document.createElement("div");
+        div.innerHTML = html;
+        var subject = div.textContent || div.innerText || "";
 
-        Message = myBlob.results[largestIndex].body;
-        console.log(myBlob.results);
+        Message = subject + " ," + text;
+        console.log(text);
     });
 
 
-
+/*
         var form = new FormData();
         form.append("Body", Message);
         form.append("To", "+16478289168");
@@ -63,7 +57,7 @@
         }).then(function(myBlob) {
             console.log(myBlob);
         });
-
+*/
 
     </script>
 
