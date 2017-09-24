@@ -1856,7 +1856,7 @@
 	}
 
 	h4 {
-		font-size: 1.1em;
+		font-size: 2em;
 		line-height: 1.5em;
 		letter-spacing: 0;
 	}
@@ -3048,14 +3048,14 @@
 		}
 
 		#banner h2 {
-			font-size: 3.5em;
+			font-size: 6em;
 			line-height: 1em;
 			margin: 0 0 0.5em 0;
 			padding: 0;
 		}
 
 		#banner p {
-			font-size: 1.25em;
+			font-size: 3em;
 			margin-bottom: 1.75em;
 		}
 
@@ -3757,5 +3757,8 @@
 			#cta {
 				padding: 2.5em 1em 3em 1em;
 			}
+
+/* API */
+
 
 	}
