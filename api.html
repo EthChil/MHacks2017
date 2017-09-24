@@ -14,46 +14,56 @@
 
     <script type="text/javascript">
 
+        var Message = "text text text";
+
 
     var myInit = { method: 'GET',
         headers: {'X-API-Token': '4042e194-a0f9-4186-b826-a38f24da2817'}};
 
     fetch('https://api.mixmax.com/v1/messages', myInit).then(function(response) {
-        //console.log(response.json());
         return response.json();
     }).then(function(myBlob) {
-        //document.write(myBlob);
-        var Message = myBlob.results[2].body;
-        document.write(myBlob.results[2].body);
+        var largest = 0;
+        var largestIndex = 0;
+
+        for(var i = 0; i < myBlob.results.length; i++)
+        {
+            var html = myBlob.results[i].updatedAt;
+            var div = document.createElement("div");
+            div.innerHTML = html;
+            var text = div.textContent || div.innerText || "";
+
+            if(text > largest)
+            {
+                largest = text;
+                largestIndex = i;
+            }
+        }
+
+        Message = myBlob.results[largestIndex].body;
+        console.log(myBlob.results);
     });
 
-    var myInit = { method: 'POST',
-        headers: {'Authorization': 'Basic QUNjNzdhNWUxYTY5ZDNmODk5OTUyMWYxZGJlOTI2ZmQ5OjMwZTQ3YmE2YmUxYzJmNjE0Yjg2OWNkYWFkZDM5MjM5',
-        'To':'+15558675309',
-        'From':'+14158141829',
-        'Body':Message},
-    };
 
-    fetch('https://api.mixmax.com/v1/messages', myInit).then(function(response) {
-        //console.log(response.json());
-        return response.json();
-    }).then(function(myBlob) {
-        //document.write(myBlob);
-        console.log(myBlob);
-    });
 
-    var accountSid = 'ACc77a5e1a69d3f8999521f1dbe926fd9';
-    var authToken = "30e47ba6be1c2f614b869cdaadd39239";
-    var client = (accountSid, authToken);
+        var form = new FormData();
+        form.append("Body", Message);
+        form.append("To", "+16478289168");
+        form.append("From", "+18317501029");
 
-    client.messages.create({
-        body: "Jenny please?! I love you <3",
-        to: "+15558675309",
-        from: "+14158141829",
-        mediaUrl: "http://www.example.com/hearts.png"
-    }, function(err, message) {
-        process.stdout.write(message.sid);
-    });
+        var myInitReloaded = { method: 'POST',
+            body : form,
+            headers: {'Authorization': 'Basic QUNjNzdhNWUxYTY5ZDNmYjg5OTk1MjFmMWRiZTkyNmZkOTozMGU0N2JhNmJlMWMyZjYxNGI4NjljZGFhZGQzOTIzOQ=='}
+        };
+
+
+
+        fetch('https://api.twilio.com/2010-04-01/Accounts/ACc77a5e1a69d3fb8999521f1dbe926fd9/Messages.json', myInitReloaded).then(function(response) {
+            return response.json();
+        }).then(function(myBlob) {
+            console.log(myBlob);
+        });
+
 
     </script>
 
