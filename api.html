@@ -13,16 +13,17 @@
 
     <script defer src="https://d1xa36cy0xt122.cloudfront.net/v1/Mixmax.js"></script>
 
-    <h2>Split the phone numbers with a comma and don't include the country extension code (the +1): </h2>
+    <h2>Split the phone numbers with a comma and don't include the international extension (+1): </h2>
     <input type="text" id="phone" />
     <ul>
+<<<<<<< HEAD
     <li><button onclick="submit();" href="javascript:;" class="button alt">Submit Names</button></li>
     <li><a href="index.html" class="button alt">Take me back</a></li>
+=======
+    <li><button onclick="submit();" href="javascript:;" class="button alt">Submit</button></li>
+    <li><a href="index.html" class="button alt">Take me home</a></li>
+>>>>>>> 80f9e90626bfacc6dc688bd88091b9c0ad081554
   </ul>
-
-  <div class="popup" onclick="myFunction()">Click me!
-  <span class="popuptext" id="myPopup">Popup text...</span>
-</div>
 
     <script type="text/javascript">
 
@@ -100,6 +101,8 @@
                     }
                 }
             }
+
+            alert("SMS Sent Succesfully");
         });
     }
 
@@ -127,8 +130,7 @@
 
 
             getEmail(space, comma);
-            var popup = document.getElementById("myPopup");
-            popup.classList.toggle("show");
+
 
 
 
