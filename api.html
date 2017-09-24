@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <script defer src="https://d1xa36cy0xt122.cloudfront.net/v1/Mixmax.js"></script>
+
+    hi
+
+
+
+    <script type="text/javascript">
+
+
+    var myInit = { method: 'GET',
+        headers: {'X-API-Token': '4042e194-a0f9-4186-b826-a38f24da2817'}};
+
+    fetch('https://api.mixmax.com/v1/messages', myInit).then(function(response) {
+        //console.log(response.json());
+        return response.json();
+    }).then(function(myBlob) {
+        //document.write(myBlob);
+        var Message = myBlob.results[2].body;
+        document.write(myBlob.results[2].body);
+    });
+
+
+
+    var myInit = { method: 'POST',
+        headers: {'Authorization': 'Basic QUNjNzdhNWUxYTY5ZDNmODk5OTUyMWYxZGJlOTI2ZmQ5OjMwZTQ3YmE2YmUxYzJmNjE0Yjg2OWNkYWFkZDM5MjM5',
+        'To':'+15558675309',
+        'From':'+14158141829',
+        'Body':Message},
+    };
+
+    fetch('https://api.mixmax.com/v1/messages', myInit).then(function(response) {
+        //console.log(response.json());
+        return response.json();
+    }).then(function(myBlob) {
+        //document.write(myBlob);
+        console.log(myBlob);
+    });
+
+
+    var accountSid = 'ACc77a5e1a69d3f8999521f1dbe926fd9';
+    var authToken = "30e47ba6be1c2f614b869cdaadd39239";
+    var client = (accountSid, authToken);
+
+    client.messages.create({
+        body: "Jenny please?! I love you <3",
+        to: "+15558675309",
+        from: "+14158141829",
+        mediaUrl: "http://www.example.com/hearts.png"
+    }, function(err, message) {
+        process.stdout.write(message.sid);
+    });
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>
