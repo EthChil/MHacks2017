@@ -11,4 +11,6 @@ For the field labelled "Icon Tooltip" enter "SMS Utility"
 For both the field labelled "Editor URL: and the field labelled "Resolver API URL" enter in this web adress http://www.snailmailspeedup.com/api.html
 Now click "Add Enhancement"
 
-Snail Mail Speedup will now be with your mixmax enhancements
+Snail Mail Speedup will now be with your mixmax enhancements.
+
+For more infomation visit our website at https://www.snailmailspeedup.com/api.html
